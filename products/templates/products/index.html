@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,16 +11,17 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>{{ title }}</title>
+    <title>{{title}}</title>
+    <link rel="icon" href="/static/vendor/favicon.png" type="image/png" />
 
     <!-- Bootstrap core CSS -->
     <link
-      href="/static/vendor/bootstrap/css/bootstrap.min.css"
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
       rel="stylesheet"
     />
 
     <!-- Custom styles for this template -->
-    <link href="/static/vendor/css/index.css" rel="stylesheet" />
+    <link href="{% static 'vendor/css/index.css' %}" rel="stylesheet" />
   </head>
 
   <body>
@@ -92,8 +95,8 @@
             <h1 class="mt-5">Store</h1>
             <p>
               Новые образы и лучшие бренды на Store. Бесплатная доставка по
-              всему миру! Аутлет: до -70% Собственный бренд. -20% новым
-              покупателям.
+              всему миру! {% if is_promoution %} Аутлет: до -70% Собственный
+              бренд. -20% новым покупателям. {% endif %}
             </p>
             <button id="start-purchase-btn" type="button" class="btn btn-lg">
               <a id="start-purchase-link" href="products.html">
@@ -106,8 +109,8 @@
     </section>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -116,7 +119,7 @@
 
     <!-- FontAwesome script -->
     <script
-      src="vendor/fontawesome/fontawesome-icons.js"
+      src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}"
       crossorigin="anonymous"
     ></script>
   </body>
